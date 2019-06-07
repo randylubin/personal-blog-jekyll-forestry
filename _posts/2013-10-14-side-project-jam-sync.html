@@ -1,0 +1,30 @@
+---
+layout: post
+title: 'Side Project: Jam-Sync'
+date: '2013-10-14T00:53:46+09:00'
+tags:
+- projects
+- programming
+tumblr_url: https://blog.randylubin.com/post/64003279316/side-project-jam-sync
+---
+<p>Happy to announce the launch of another side project: <a href="http://randylubin.github.io/jam-sync/#/" target="_blank">Jam-Sync</a>.</p>
+
+<p>Jam-Sync is a collaboration with my younger brother, <a href="http://greglubin.com/" target="_blank">Greg</a>. It&rsquo;s a simple web app that allows musicians to know what chord to play while jamming. It&rsquo;s meant for multiple musicians in the same room, who can put their phone, tablet, or laptop in view while they play.</p>
+
+<p><img src="https://66.media.tumblr.com/3b526d442f076abc56fbefd906eed6fb/tumblr_inline_munegkNPvA1qc3e3u.png" alt=""/></p>
+
+<p>We got the idea during Dropbox happy hour this summer. It was a great party and late in the evening we found our way to Dropbox&rsquo;s awesome music room. Greg plays piano and I play guitar. We picked up a drummer and bass player and started jamming. Slight problem: we kept forgetting what chord we should play as we went through the progressions.</p>
+
+<p>Greg was living with me for the summer, doing an internship in the tech scene. He&rsquo;s been teaching himself to code and we were looking to collaborate on a fun project. Soon after the Dropbox jam session we chose the problem from that night; we decide to build an app to help musicians stay on the right chord when jamming.</p>
+
+<p>We built the first prototype in a few hours and have since added some key features such as editing the chords, changing the beats-per-minute, and having multiple &lsquo;rooms&rsquo; a user can enter.</p>
+
+<p>It was fun and easy to build. We used Angular for the front-end and Firebase to sync between clients. Depending on interest, there are a bunch of directions we can extend the app: longer chord progressions, different time signatures, suggested scales, and diagrams to show how to play the chords.</p>
+
+<p>Check it out <a href="http://randylubin.github.io/jam-sync/#/" target="_blank">here</a> and use it the next time you jam!</p>
+
+<p><em>Geeky side-story: Clock Skew</em></p>
+
+<p>Getting the starting time to sync between clients was no easy task. We thought we only had to worry about latency and aimed to get around it by syncing a start time far enough in the future. Latency was the least of our time problems.</p>
+
+<p>We learned that most devices have different internal clock times - the deviation is known as <a href="http://en.wikipedia.org/wiki/Clock_skew" target="_blank">clock skew</a>. Lucky for us, Firebase can estimate the difference between local time and server time - check it out <a href="https://www.firebase.com/docs/managing-presence.html" target="_blank">here</a>. With the Firebase fix, it was easy to adjust for the skew and get multiple devices to start the chord progression at the same time - crisis avoided!</p>

@@ -1,0 +1,79 @@
+---
+layout: post
+title: Dat-GUI Tutorial
+date: '2013-01-27T19:51:00+09:00'
+tags:
+- programming
+tumblr_url: https://blog.randylubin.com/post/41673541855/dat-gui-tutorial
+---
+<p>This post will empower you to easily use <a href="https://code.google.com/p/dat-gui/" target="_blank">Dat-GUI</a> to quickly iterate on your web design.</p>
+
+<p><img src="https://66.media.tumblr.com/e9f20a323268c5d27c2b9d395876d1d5/tumblr_inline_mgyku9pcbf1qc3e3u.png" alt=""/></p>
+
+<p>Last week I <a href="http://blog.randylubin.com/2019/05/11/2013-01-20-site-revamp-learning-visual-design.html" target="_blank">wrote</a> about my use of Dat-GUI in redesigning my website. Dat-GUI provides a control panel for your site where you can easily modify different CSS values without editing code or reloading the page. You can see it in action on the beta version of my site <a href="http://randylubin.com/beta" target="_blank">here</a>.</p>
+
+<p>Dat-GUI has a nice <a href="http://workshop.chromeexperiments.com/examples/gui/#1--Basic-Usage" target="_blank">walkthrough</a> where you can see its various features in action. Unfortunately, the documentation is poor and I had a bit of trouble integrating it to my site. With this guide you will be able to easily use Dat-GUI in three simple steps:</p>
+
+<p>1)  Install Dat-GUI by downloading the files to your web directory
+2)  Add the Dat-GUI default CSS values
+3)  Link the Dat-GUI control panel to the CSS values</p>
+
+<h2>1) &ldquo;Installing&rdquo; Dat-GUI</h2>
+
+<p>You need to download the Dat-GUI JavaScript file and it to your site. The files are hosted <a href="http://code.google.com/p/dat-gui/source/browse/#git%2Fbuild" target="_blank">here</a>. The main file is - dat.gui.min.js - adds the main control panel to your webpage. You will need an extra file - dat.color.min.js - if you want to use the color selector (what I have on my site and use in this tutorial). Add these files to your site by putting it in the folder with your other JavaScript and linking to it in your site .</p>
+
+<pre><code>&lt;script type="text/javascript" src="/js/dat.gui.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/js/dat.color.min.js"&gt;
+</code></pre>
+
+<p>I also use jQuery. While not essential, it makes the next part easier.</p>
+
+<pre><code>&lt;/script&gt;
+</code></pre>
+
+<h2>2) Add Dat-GUI Default CSS Values</h2>
+
+<p>Now that your web page can access the Dat-GUI, you need to select which CSS variables you want to control and add their default values. For my redesign, I was concerned with color so I wanted to play with the background, accent, and paragraph colors.</p>
+
+<p>I&rsquo;m storing the default values in the pageColors function to keep things clean but you can store it however you prefer. I name the three things I&rsquo;m interested in and set them equal to default color values in hex code.</p>
+
+<pre><code>&lt;script type="text/javascript"&gt;
+    var pageColors = function() {
+        this.backgroundColor = '#091a28';
+        this.accentColor = '#91b8d9';
+        this.paragraphColor = '#e6e6e6';
+        };
+
+    ...
+</code></pre>
+
+<h2>3) Connect Dat-GUI to your CSS</h2>
+
+<p>Now we need to connect Dat-GUI to your CSS. This will update the webpage as you make changes through the control panel. First we need to add the Dat-GUI widget. Then we give instructions for what to do with each modification.</p>
+
+<pre><code>... 
+    window.onload = function() {
+        // add the control panel
+        var gui = new dat.GUI();
+        // add the backgroundColor control and wait for a change
+        gui.addColor(pageColors, 'backgroundColor').onChange(function(){
+            // when a change occurs, navigate the DOM to 'body' and update the CSS for the background color
+            $("body").css('background-color', pageColors.backgroundColor)
+        });
+        // add the accentColor control and wait for a change
+        gui.addColor(pageColors, 'accentColor').onChange(function(){
+            // navigate the DOM to find xxx##### with the class "accentText" and update the CSS for the color
+            $("body").find('.accentText').css('color', pageColors.accentColor);
+        });
+        gui.addColor(colors, 'paragraphColor').onChange(function(){
+            $("p").css('color', pageColors.paragraphColor)
+        });
+    };
+&lt;/script&gt;
+</code></pre>
+
+<p>I add this code directly below the default values, within the same script tag.</p>
+
+<p>If you are modifying something other than color, you would use gui.add rather than than gui.addColor.</p>
+
+<p>That&rsquo;s all there is to it! Now you can go experiment with Dat-GUI on your own site.</p>

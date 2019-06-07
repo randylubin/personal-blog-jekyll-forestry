@@ -1,0 +1,32 @@
+---
+layout: post
+title: Nation Builder - Dynamic Growth
+date: '2013-04-07T22:40:00+09:00'
+tags:
+- nation building
+- game design
+tumblr_url: https://blog.randylubin.com/post/47438515379/nation-builder-dynamic-growth
+---
+<p>I only spent a few hours on Nation Building this week but I have added dynamical growth. You can try it out <a href="http://nationbuilding.randylubin.com" target="_blank">here</a> but it&rsquo;s still far from a complete game.</p>
+
+<p>For now I&rsquo;m using a <a href="http://en.wikipedia.org/wiki/Logistic_growth" target="_blank">Logistic Function</a> to model the growth of the human population and the ecology. A logistic growth function looks like this:</p>
+
+<p><img src="https://66.media.tumblr.com/3367dd587fe6c31a6660fabca046e573/tumblr_inline_mkx90lTFbp1qz4rgp.png" alt=""/></p>
+
+<ul><li>r is the growth rate</li>
+<li>P is the current population</li>
+<li>K is the carrying capacity (maximum population)</li>
+</ul><p>The left side of the equation represents the population increase after one growth cycle.</p>
+
+<p>Each turn, for each tile, here&rsquo;s how I use the equation in the game:</p>
+
+<ol><li>The human population grows according the above equation with r = 1.3 and K = the tile&rsquo;s current Ecology</li>
+<li>Ecology then decreases by the human population to represent the food being eaten</li>
+<li>The ecology then grows with the same equation with r = 1.3 and K = 300 (an arbitrary max ecology)</li>
+</ol><p>On each tile, the humans are the black number and the ecology is the red number.</p>
+
+<p><img src="https://66.media.tumblr.com/b271cd65c5b2bbd8b97b2d4bddd70ff1/tumblr_inline_mkx8mk8q3q1qz4rgp.png" alt=""/></p>
+
+<p>I like this much better than the arbitrary growth model I was using previously but I still want to tweak it a lot. I&rsquo;m thinking about having Population affect Ecology indirectly by modifying the Max Ecology (K) rather than the Ecology itself. This would simulate populations gradually erroding the soil.</p>
+
+<p>Unrelated - I&rsquo;ve started work on the interactions between bands. The game engine now identifies potential collisions and allows the bands to alter thier intended move. For now I just have the bands &lsquo;bounce&rsquo; back to their current tile but in the future I&rsquo;ll allows for fighting, trading, merging, etc.</p>

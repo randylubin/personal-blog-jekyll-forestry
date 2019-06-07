@@ -1,0 +1,19 @@
+---
+layout: post
+title: 'Thought Experiment: Temporally Optimized News Feed'
+date: '2012-05-21T01:11:29+09:00'
+tags: []
+tumblr_url: https://blog.randylubin.com/post/23471531730/thought-experiment-temporally-optimized-news-feed
+---
+<h3>Some Context</h3>
+<p>I consume a lot of news online, mostly through Google Reader. The blogs I follow (mostly tech) generate roughly 200 posts on weekdays - I read every headline and then end up reading or skimming roughly 25% of the posts. It&rsquo;s a lot of content and that doesn&rsquo;t include opening a Hacker News / Reddit tab or flipping through the New York Times.</p>
+<p>First thing in the morning and last thing at night I&rsquo;ll go through Google Reader. I&rsquo;ll check in a few times throughout the day and clear out the new posts. It&rsquo;s relatively under control (i.e. I&rsquo;m not compulsively checking it every few minutes).</p>
+<p>I&rsquo;ll save my thoughts on whether this much consumption is good / healthy for another post but I tend to hit two types of trouble with this system.</p>
+<h3>The Problem(s)</h3>
+<p>The first problem occurs when I&rsquo;ve had a busy day or two and the new posts pile up.  Once it gets over a couple hundred new posts, I&rsquo;ll usually give up and declare blog bankruptcy (except for friends&rsquo; blogs). This is always a bit frustrating as I&rsquo;ll suspect there&rsquo;s some great content I&rsquo;m throwing away. This issue is much exacerbated if I go on vacation&hellip; I&rsquo;ll have no option but to delete scores of good content.</p>
+<p>Problem two is at the opposite end of the spectrum - if I have a random bits of extra time throughout the day, I might want to read more high quality content. If I&rsquo;ve already cleared out Google Reader and checked Hacker News, I may be at a loss for the next batch of content to explore. I could go the &lsquo;new&rsquo; page for HN but I prefer having some type of filter to help with the signal / noise problem.</p>
+<h3>The Solution</h3>
+<p>An ideal solution would be a Reader which knows which content I&rsquo;ve read AND tracks the duration between visits. If I&rsquo;ve been on vacation for a week, it would show the best content of that week. If I&rsquo;m checking in again after just an hour, it would show me the best content from past 60 minutes (assuming I had read or cleared the top content as of an hour ago).</p>
+<p>Reddit already enables a lower quality version of this. If you select the 'top&rsquo; tab, you can search through the top posts of this year, month, week, day, hour, or all time. This is especially useful if you find a new subreddit and are curious about the best content that&rsquo;s been posted there. Rather than the somewhat arbitrary time options they have, I&rsquo;d much rather have a option of <strong>Since I Last Visited Reddit</strong>.</p>
+<p>Creating an algorithm as described in the first paragraph of this section isn&rsquo;t easy but it&rsquo;s definitely feasible. There are some trickier design decisions which would deal with how deep ones consumption is in any visit (if I just spend 5 minutes reading during one session, I don&rsquo;t want the clock to reset to that time). Another tricky area is weighting recent vs past events.  I probably care more about whats going on today than yesterday but still want to know about major events from yesterday. Perhaps the proper weight looks like: good articles from today, great articles from yesterday, and amazing articles from before that.</p>
+<p>This isn&rsquo;t something I&rsquo;ll build just something I&rsquo;d like to see&hellip; your thoughts?</p>

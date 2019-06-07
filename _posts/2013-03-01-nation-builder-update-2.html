@@ -1,0 +1,25 @@
+---
+layout: post
+title: Nation Builder - Update 2
+date: '2013-03-01T22:53:00+09:00'
+tags:
+- nation building
+- game design
+tumblr_url: https://blog.randylubin.com/post/44354891835/nation-builder-update-2
+---
+<p>This week I was able to put in a few more hours after work on the game I&rsquo;ve been <a href="http://blog.randylubin.com/2019/05/11/2013-02-24-nation-builder-game-update.html" target="_blank">talking about</a>.</p>
+
+<p>Early in the week, I built it to a point where it:</p>
+
+<ul><li>Created a unique map with land and water</li>
+<li>Selected one territory to be populated</li>
+<li>Applied a logistic growth model to grow the populated territories</li>
+<li>Expanded territories to adjacent territories once they grew above a population of 150 (Dunbar&rsquo;s Number)</li>
+</ul><p>Here&rsquo;s a shot of the map a few turns in; the numbers are the population in that territory:
+<img src="https://66.media.tumblr.com/2a281d4fb56e9745c1bf3e0f3c64637f/tumblr_inline_mj0tl0etXK1qz4rgp.png" alt=""/></p>
+
+<p>Later in the week I did a major refactoring of the code to take advantage of <a href="http://requirejs.org/" target="_blank">RequireJS</a>. This allows me to break the Backbone App into many files in different folders. It was a bit of a headache to port it over but my codebase is now much easier to manage.</p>
+
+<p>With some of the guts of the simulation behind me, I&rsquo;m starting to create the game part of the app. I&rsquo;m going to start by creating a simple game that just involves civilizations at the Band level (groups of 20 kinsmen). Once that&rsquo;s complete, I&rsquo;ll share it here so you can play it.</p>
+
+<p>I have some exciting game mechanics in store for as the game goes on but I&rsquo;ll keep it a surprise for now&hellip;</p>

@@ -1,0 +1,30 @@
+---
+layout: post
+title: Nation Building Update (5/5/2013)
+date: '2013-05-05T22:33:00+09:00'
+tags:
+- nation building
+- game design
+tumblr_url: https://blog.randylubin.com/post/49755717622/nation-building-update-552013
+---
+<p>After a few lazy weeks, I had a very productive day on Nation Building! It feels really good to be coding again. I&rsquo;ll provide a brief overview of my updates. You can check out the latest version <a href="http://nationbuilding.randylubin.com/" target="_blank">here</a>.</p>
+
+<h2>Keyboard Controls</h2>
+
+<p>I added a module that monitors keyboard inputs and acts on them when appropriate. The two current uses are:</p>
+
+<ol><li>You can issue movement orders to your band</li>
+<li>You can resolve a decision by hitting the number of the choice</li>
+</ol><p>The movement keys map to the neighboring territories like this:</p>
+
+<p><img src="https://66.media.tumblr.com/58b290f9bfcd1178a1b5a72c7f23007f/tumblr_inline_mmd3asvEPw1qz4rgp.gif" alt=""/></p>
+
+<p>If you don&rsquo;t want to use the keyboard, you also still click to both select movement and choices.</p>
+
+<p>The module was a little tricky to create but I can now easily extend it to encompass any other actions.</p>
+
+<h2>Win Conditions</h2>
+
+<p>I now have a game loop checking for win conditions. The only way to win right now is by selecting &lsquo;Win the Game&rsquo; during a random 'Decision&rsquo; event, but it&rsquo;ll be easy to extend the conditions to something much more interesting.</p>
+
+<p>That&rsquo;s all for today but I hope to get a few more hours in tomorrow night.</p>

@@ -1,0 +1,24 @@
+---
+layout: post
+title: Porting Ecosystems to p5.js
+date: '2014-08-19T22:51:46+09:00'
+tags:
+- processing
+- programming
+tumblr_url: https://blog.randylubin.com/post/95259972368/porting-ecosystems-to-p5js
+---
+<p><a href="http://randylubin.github.io/ecosystem-p5js/" target="_blank">Check out Ecosystem with p5.js</a></p>
+
+<p>Back in 2012, I was experimenting with Processing, a programing language / environment optimized for generative art. My main output was &lsquo;Ecosystem&rsquo; which I talked about <a href="http://blog.randylubin.com/2019/05/11/2012-04-29-ecosystem-a-little-art-project.html" target="_blank">here</a>.</p>
+
+<p>Processing was great but translated very poorly to the web, users had to view it through a Java applet. I tried an alternative, Processing.js, but it didn&rsquo;t work well and the code seemed inefficient.</p>
+
+<p>Last week I found <a href="http://p5js.org/" target="_blank">p5.js</a> which aims to follow Processing&rsquo;s vision and make it live on the web. After poking around I decided to port Ecosystem over to p5.js</p>
+
+<p><img src="https://66.media.tumblr.com/782004b71b19f106ceebfe425b94491d/tumblr_inline_nalc7ogeo71qc3e3u.png" alt=""/></p>
+
+<p>The transition wasn&rsquo;t terrible but there were definitely some rough patches. The biggest change was replicating the Java-style objects and classes in Javascript. Other issues arose in converting the Vectors. Finally, there were some scope issues that I had to track down.</p>
+
+<p>Overall, I&rsquo;m happy with p5.js and would do another small project with it. For something more ambitious, I would probably use <a href="http://www.createjs.com/#!/EaselJS" target="_blank">EaselJS</a></p>
+
+<p>Ecosystem&rsquo;s code is on GitHub <a href="https://github.com/randylubin/ecosystem-p5js" target="_blank">here</a> and a demo lives <a href="http://randylubin.github.io/ecosystem-p5js/" target="_blank">here</a></p>

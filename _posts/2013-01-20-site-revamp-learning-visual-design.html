@@ -1,0 +1,60 @@
+---
+layout: post
+title: Site Revamp - Learning Visual Design
+date: '2013-01-20T20:58:00+09:00'
+tags:
+- programming
+- design
+tumblr_url: https://blog.randylubin.com/post/41079139893/site-revamp-learning-visual-design
+---
+<p>It&rsquo;s surprisingly hard to teach yourself visual design.</p>
+
+<p>If you are learning to code, there are myriad courses, guides, and tutorials which provide rich context for the concepts and a roadmap for gaining new skills. If you trying to improve your intuition for design, there are far fewer resources. While there are some great overviews for narrow topics, there is little help for someone trying to build a broad intuition for design.</p>
+
+<h2>Site Redesign</h2>
+
+<p>I am currently redesigning my <a href="http://randylubin.com" target="_blank">website</a> - different from this blog - something I&rsquo;ve done roughly once a year since I started learning to code. With each iteration, I try to learn something new. For the first version, I was just playing with the basics of HTML/CSS. Last year I focused on JavaScript and incorporated animations and tabs to create a single page website. I also found <a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap</a>, which I now use for everything. This year, I&rsquo;ve sought to hone my design sense.</p>
+
+<p>I don&rsquo;t have any formal training in design and don&rsquo;t consider myself to have any innate knack for it. While I&rsquo;ve read up on the basics of color theory, typography, and information architecture, I&rsquo;ve felt lost when it comes to implementing the different concepts in unison. Part of the issue is a lack of deep intuition; I know some general heuristics about how to select a color scheme or what fonts to use but I don&rsquo;t always understand the reasoning behind it.</p>
+
+<h2>Looking for Advice</h2>
+
+<p>As I redesigned the site, I turned to two friends for advice. Early in the process I spoke with <a href="http://yerit.com" target="_blank">David Yanofsky</a>, who encouraged me to explore flat design and pointed me toward <a href="http://layervault.tumblr.com/post/32267022219/flat-interface-design" target="_blank">this site</a>. I like the flat design aesthetic and it made me wince at the gratuitous use of textures and shadows in my previous iteration.</p>
+
+<p><img src="https://66.media.tumblr.com/e50278a44efa002169c227f8cb0c231f/tumblr_inline_mgyksidtps1qc3e3u.png" alt=""/></p>
+
+<p>David also nudged me to use responsive design and to maintain information consistency across the various views (at first I had slight different content for web vs mobile). Responsive design turned out to be very easy to implement as Bootstrap contains some degree of responsiveness by default and it is easy to modify the settings to your needs.</p>
+
+<p>Once most of the site was in place, I talked with <a href="http://raphdamico.com/" target="_blank">Raph D'Amico</a> about color scheme. My first pass at color selection was just based on picking a nice color blue for the background and then choosing the complementary orange as an accent color; it didn&rsquo;t quite work but I had no idea why.</p>
+
+<p><img src="https://66.media.tumblr.com/089d18c057ccb7d3c83c38ae31ff5fb9/tumblr_inline_mgyktm7PbL1qc3e3u.png" alt=""/></p>
+
+<p>Raph explained to me the importance of brightness / saturation when considering colors. Some tips he suggested were:
+1.   If two sections of the page have equal presence and importance, consider using equivalent intensity and complementary colors to bring a sense of balance
+2.   If the elements are unbalanced on the page, consider desaturating either the primary or the secondary color
+3.   Often you only need one alteration to effectively delineate different parts of the page. For example the only change between navigation text and body text could just be color or font or size, not necessarily a combination of the three.
+4.   Just because two colors are opposite on the color wheel doesn&rsquo;t mean the human eye perceives them equally; adjust the intensity of a color to compensate for biological interpretation</p>
+
+<p>I decided to focus in on point two because the headers were relatively out of balance with the vast background. As I played with the colors, I was frustrated by the slow process of updating the code and refreshing the page. Fortunately, Raph showed me a great tool: <a href="http://dat-gui.googlecode.com" target="_blank">Dat-GUI</a>. Dat-GUI provides a console in the corner of the page where you can easily adjust any part of the page. I customized it to adjust the background, accent, and body colors. Then I was able to play with different color combinations with complete ease. On Raph&rsquo;s advice, I took it further and created a page with two versions of my site next to each other and corresponding Dat-GUI controls. This allowed me to quickly compare different options.</p>
+
+<p><img src="https://66.media.tumblr.com/e9f20a323268c5d27c2b9d395876d1d5/tumblr_inline_mgyku9pcbf1qc3e3u.png" alt=""/><img src="https://66.media.tumblr.com/d1f66391e0a334ee7013878f417a0cac/tumblr_inline_mgykuoy5bf1qc3e3u.png" alt=""/></p>
+
+<h2>Final Touches</h2>
+
+<p>Ultimately, I moved away from the complementary orange accent coloring; for reasons I can&rsquo;t articulate, it just wasn&rsquo;t working. I settled on an all blue palette. There are still some tweaks I have to make but the site is now live at <a href="http://randylubin.com" target="_blank">randylubin.com</a>; I also ported the color scheme to this blog and my Twitter account. It&rsquo;s definitely not amazing but I think it&rsquo;s a significant step forward; I&rsquo;m looking forward to continuing to learn design.</p>
+
+<p>Any further feedback would be much appreciated!</p>
+
+<p><img src="https://66.media.tumblr.com/7b9ae3e434e6762ce442233e182a43ef/tumblr_inline_mgykvamC1G1qc3e3u.png" alt=""/></p>
+
+<h1>Resources</h1>
+
+<p>If you&rsquo;re looking to further your design intuition, the best options is probably sitting down with a friend who is great at design. With that said, here are some tools I&rsquo;ve used and enjoyed.</p>
+
+<ul><li><a href="https://code.google.com/p/dat-gui/" target="_blank">Dat-GUI</a></li>
+<li><a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap</a></li>
+<li><a href="http://colorschemedesigner.com/" target="_blank">Color Scheme Designers</a></li>
+<li><a href="http://css3generator.com" target="_blank">CSS3 generator</a></li>
+<li><a href="http://www.google.com/webfonts" target="_blank">Google WebFonts</a></li>
+<li><a href="http://subtlepatterns.com/" target="_blank">Subtle Patterns</a></li>
+</ul><p>If there are other resources you like, let me know and I&rsquo;ll add them to the list.</p>
